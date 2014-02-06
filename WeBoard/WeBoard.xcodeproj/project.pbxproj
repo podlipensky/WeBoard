@@ -11,7 +11,21 @@
 		830641CA189C8AC8006C6F6E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830641C9189C8AC8006C6F6E /* QuartzCore.framework */; };
 		830641CC189C8AD7006C6F6E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830641CB189C8AD7006C6F6E /* AVFoundation.framework */; };
 		830641CF189C8E18006C6F6E /* GLESImageView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 830641CE189C8E18006C6F6E /* GLESImageView.mm */; };
-		830641D2189C931C006C6F6E /* VideoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 830641D1189C931C006C6F6E /* VideoViewController.mm */; };
+		831380B518A37E720085360C /* FPSCalculator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 831380B418A37E720085360C /* FPSCalculator.mm */; };
+		8385DBDB189D98FB004A3094 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8385DBDA189D98FB004A3094 /* CoreImage.framework */; };
+		8385DBDD189D9909004A3094 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8385DBDC189D9909004A3094 /* CoreVideo.framework */; };
+		8385DBDF189D9915004A3094 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8385DBDE189D9915004A3094 /* AssetsLibrary.framework */; };
+		8385DBE1189D993A004A3094 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8385DBE0189D993A004A3094 /* CoreMedia.framework */; };
+		8385DBE3189D9946004A3094 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8385DBE2189D9946004A3094 /* GLKit.framework */; };
+		8385DBE5189D9950004A3094 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8385DBE4189D9950004A3094 /* OpenGLES.framework */; };
+		8385DBEA189D9E15004A3094 /* VideoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8385DBE9189D9E15004A3094 /* VideoViewController.mm */; };
+		8385DBED189DA2E5004A3094 /* UIImage2OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8385DBEC189DA2E5004A3094 /* UIImage2OpenCV.mm */; };
+		8385DBF0189E550C004A3094 /* BaseVideoProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8385DBEE189E550C004A3094 /* BaseVideoProcessor.cpp */; };
+		8385DBF3189E5699004A3094 /* ContourDetectorProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8385DBF1189E5699004A3094 /* ContourDetectorProcessor.cpp */; };
+		8385DBF9189E59F2004A3094 /* ProcessorFacade.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8385DBF8189E59F2004A3094 /* ProcessorFacade.mm */; };
+		8385DBFC189E5D48004A3094 /* NSString+StdString.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8385DBFB189E5D48004A3094 /* NSString+StdString.mm */; };
+		838BB53C189EFEB500524A69 /* HumanDetectionProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 838BB53A189EFEB400524A69 /* HumanDetectionProcessor.cpp */; };
+		838BB543189F035700524A69 /* WBTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838BB542189F035700524A69 /* WBTabViewController.m */; };
 		83B93279189B6A5E0064D0F9 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B93278189B6A5E0064D0F9 /* opencv2.framework */; };
 		83C82001189B2F45005C859D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C82000189B2F45005C859D /* Foundation.framework */; };
 		83C82003189B2F45005C859D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C82002189B2F45005C859D /* CoreGraphics.framework */; };
@@ -47,8 +61,30 @@
 		830641CB189C8AD7006C6F6E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		830641CD189C8E18006C6F6E /* GLESImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESImageView.h; sourceTree = "<group>"; };
 		830641CE189C8E18006C6F6E /* GLESImageView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLESImageView.mm; sourceTree = "<group>"; };
-		830641D0189C931C006C6F6E /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
-		830641D1189C931C006C6F6E /* VideoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoViewController.mm; sourceTree = "<group>"; };
+		831380B318A37E720085360C /* FPSCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPSCalculator.h; sourceTree = "<group>"; };
+		831380B418A37E720085360C /* FPSCalculator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FPSCalculator.mm; sourceTree = "<group>"; };
+		8385DBDA189D98FB004A3094 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		8385DBDC189D9909004A3094 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		8385DBDE189D9915004A3094 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		8385DBE0189D993A004A3094 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		8385DBE2189D9946004A3094 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		8385DBE4189D9950004A3094 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8385DBE8189D9E15004A3094 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		8385DBE9189D9E15004A3094 /* VideoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoViewController.mm; sourceTree = "<group>"; };
+		8385DBEB189DA2E5004A3094 /* UIImage2OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage2OpenCV.h; sourceTree = "<group>"; };
+		8385DBEC189DA2E5004A3094 /* UIImage2OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UIImage2OpenCV.mm; sourceTree = "<group>"; };
+		8385DBEE189E550C004A3094 /* BaseVideoProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseVideoProcessor.cpp; sourceTree = "<group>"; };
+		8385DBEF189E550C004A3094 /* BaseVideoProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVideoProcessor.h; sourceTree = "<group>"; };
+		8385DBF1189E5699004A3094 /* ContourDetectorProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ContourDetectorProcessor.cpp; sourceTree = "<group>"; };
+		8385DBF2189E5699004A3094 /* ContourDetectorProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContourDetectorProcessor.h; sourceTree = "<group>"; };
+		8385DBF7189E59F2004A3094 /* ProcessorFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessorFacade.h; sourceTree = "<group>"; };
+		8385DBF8189E59F2004A3094 /* ProcessorFacade.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProcessorFacade.mm; sourceTree = "<group>"; };
+		8385DBFA189E5D48004A3094 /* NSString+StdString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StdString.h"; sourceTree = "<group>"; };
+		8385DBFB189E5D48004A3094 /* NSString+StdString.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+StdString.mm"; sourceTree = "<group>"; };
+		838BB53A189EFEB400524A69 /* HumanDetectionProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HumanDetectionProcessor.cpp; path = ../HumanDetectionProcessor.cpp; sourceTree = "<group>"; };
+		838BB53B189EFEB500524A69 /* HumanDetectionProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HumanDetectionProcessor.h; path = ../HumanDetectionProcessor.h; sourceTree = "<group>"; };
+		838BB541189F035700524A69 /* WBTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTabViewController.h; sourceTree = "<group>"; };
+		838BB542189F035700524A69 /* WBTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTabViewController.m; sourceTree = "<group>"; };
 		83B93278189B6A5E0064D0F9 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../ios/opencv2.framework; sourceTree = "<group>"; };
 		83C81FFD189B2F45005C859D /* WeBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83C82000189B2F45005C859D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,6 +114,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8385DBE5189D9950004A3094 /* OpenGLES.framework in Frameworks */,
+				8385DBE3189D9946004A3094 /* GLKit.framework in Frameworks */,
+				8385DBE1189D993A004A3094 /* CoreMedia.framework in Frameworks */,
+				8385DBDF189D9915004A3094 /* AssetsLibrary.framework in Frameworks */,
+				8385DBDD189D9909004A3094 /* CoreVideo.framework in Frameworks */,
+				8385DBDB189D98FB004A3094 /* CoreImage.framework in Frameworks */,
 				830641CC189C8AD7006C6F6E /* AVFoundation.framework in Frameworks */,
 				830641CA189C8AC8006C6F6E /* QuartzCore.framework in Frameworks */,
 				83C82003189B2F45005C859D /* CoreGraphics.framework in Frameworks */,
@@ -100,6 +142,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		838BB53D189EFED000524A69 /* VideoProcessors */ = {
+			isa = PBXGroup;
+			children = (
+				838BB53A189EFEB400524A69 /* HumanDetectionProcessor.cpp */,
+				838BB53B189EFEB500524A69 /* HumanDetectionProcessor.h */,
+				8385DBF7189E59F2004A3094 /* ProcessorFacade.h */,
+				8385DBF8189E59F2004A3094 /* ProcessorFacade.mm */,
+				8385DBEE189E550C004A3094 /* BaseVideoProcessor.cpp */,
+				8385DBEF189E550C004A3094 /* BaseVideoProcessor.h */,
+				8385DBF1189E5699004A3094 /* ContourDetectorProcessor.cpp */,
+				8385DBF2189E5699004A3094 /* ContourDetectorProcessor.h */,
+			);
+			name = VideoProcessors;
+			sourceTree = "<group>";
+		};
 		83C81FF4189B2F45005C859D = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +179,12 @@
 		83C81FFF189B2F45005C859D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8385DBE4189D9950004A3094 /* OpenGLES.framework */,
+				8385DBE2189D9946004A3094 /* GLKit.framework */,
+				8385DBE0189D993A004A3094 /* CoreMedia.framework */,
+				8385DBDE189D9915004A3094 /* AssetsLibrary.framework */,
+				8385DBDC189D9909004A3094 /* CoreVideo.framework */,
+				8385DBDA189D98FB004A3094 /* CoreImage.framework */,
 				830641CB189C8AD7006C6F6E /* AVFoundation.framework */,
 				830641C9189C8AC8006C6F6E /* QuartzCore.framework */,
 				83B93278189B6A5E0064D0F9 /* opencv2.framework */,
@@ -136,8 +199,11 @@
 		83C82006189B2F45005C859D /* WeBoard */ = {
 			isa = PBXGroup;
 			children = (
-				830641D0189C931C006C6F6E /* VideoViewController.h */,
-				830641D1189C931C006C6F6E /* VideoViewController.mm */,
+				831380B318A37E720085360C /* FPSCalculator.h */,
+				831380B418A37E720085360C /* FPSCalculator.mm */,
+				838BB53D189EFED000524A69 /* VideoProcessors */,
+				8385DBE8189D9E15004A3094 /* VideoViewController.h */,
+				8385DBE9189D9E15004A3094 /* VideoViewController.mm */,
 				83C8200F189B2F45005C859D /* WBAppDelegate.h */,
 				83C82010189B2F45005C859D /* WBAppDelegate.m */,
 				83C82012189B2F45005C859D /* Main.storyboard */,
@@ -151,6 +217,8 @@
 				830641C7189C8823006C6F6E /* VideoSource.mm */,
 				830641CD189C8E18006C6F6E /* GLESImageView.h */,
 				830641CE189C8E18006C6F6E /* GLESImageView.mm */,
+				838BB541189F035700524A69 /* WBTabViewController.h */,
+				838BB542189F035700524A69 /* WBTabViewController.m */,
 			);
 			path = WeBoard;
 			sourceTree = "<group>";
@@ -158,6 +226,10 @@
 		83C82007189B2F45005C859D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8385DBFA189E5D48004A3094 /* NSString+StdString.h */,
+				8385DBFB189E5D48004A3094 /* NSString+StdString.mm */,
+				8385DBEB189DA2E5004A3094 /* UIImage2OpenCV.h */,
+				8385DBEC189DA2E5004A3094 /* UIImage2OpenCV.mm */,
 				83C82008189B2F45005C859D /* WeBoard-Info.plist */,
 				83C82009189B2F45005C859D /* InfoPlist.strings */,
 				83C8200C189B2F45005C859D /* main.m */,
@@ -232,6 +304,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Pavlo Pidlypenskyi";
 				TargetAttributes = {
+					83C81FFC189B2F45005C859D = {
+						DevelopmentTeam = 8U2C4K985T;
+					};
 					83C82020189B2F45005C859D = {
 						TestTargetID = 83C81FFC189B2F45005C859D;
 					};
@@ -285,10 +360,18 @@
 				83C8200D189B2F45005C859D /* main.m in Sources */,
 				83C82017189B2F45005C859D /* WBFirstViewController.m in Sources */,
 				83C82011189B2F45005C859D /* WBAppDelegate.m in Sources */,
-				830641D2189C931C006C6F6E /* VideoViewController.mm in Sources */,
+				831380B518A37E720085360C /* FPSCalculator.mm in Sources */,
+				838BB53C189EFEB500524A69 /* HumanDetectionProcessor.cpp in Sources */,
+				8385DBFC189E5D48004A3094 /* NSString+StdString.mm in Sources */,
+				838BB543189F035700524A69 /* WBTabViewController.m in Sources */,
+				8385DBF3189E5699004A3094 /* ContourDetectorProcessor.cpp in Sources */,
 				830641CF189C8E18006C6F6E /* GLESImageView.mm in Sources */,
+				8385DBF0189E550C004A3094 /* BaseVideoProcessor.cpp in Sources */,
+				8385DBEA189D9E15004A3094 /* VideoViewController.mm in Sources */,
+				8385DBF9189E59F2004A3094 /* ProcessorFacade.mm in Sources */,
 				830641C8189C8823006C6F6E /* VideoSource.mm in Sources */,
 				83C8201A189B2F45005C859D /* WBSecondViewController.m in Sources */,
+				8385DBED189DA2E5004A3094 /* UIImage2OpenCV.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,16 +496,35 @@
 		83C82033189B2F45005C859D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = NO;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Pavlo Pidlypenskyi (857N438C3M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/podlipensky/Sites/ios,
 				);
+				GCC_CW_ASM_SYNTAX = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeBoard/WeBoard-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_FUNCTION = NO;
 				INFOPLIST_FILE = "WeBoard/WeBoard-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-mfpu=neon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -430,16 +532,39 @@
 		83C82034189B2F45005C859D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = NO;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Pavlo Pidlypenskyi (857N438C3M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_NS_ASSERTIONS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/podlipensky/Sites/ios,
 				);
+				GCC_CW_ASM_SYNTAX = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeBoard/WeBoard-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_FUNCTION = NO;
 				INFOPLIST_FILE = "WeBoard/WeBoard-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-mfpu=neon",
+					"-DNS_BLOCK_ASSERTIONS=1",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -54,7 +54,7 @@
         dispatch_queue_t queue;
         queue = dispatch_queue_create("com.computer-vision-talks.cameraQueue", NULL);
         [captureOutput setSampleBufferDelegate:self queue:queue];
-        dispatch_release(queue);
+//        dispatch_release(queue);
         
         [session addInput:captureInput];
         [session addOutput:captureOutput];
@@ -71,8 +71,10 @@
 - (AVCaptureVideoOrientation) videoOrientation
 {
     AVCaptureConnection * connection = [captureOutput connectionWithMediaType:AVMediaTypeVideo];
-    if (connection)
+
+    if (connection) {
         return [connection videoOrientation];
+    }
     
     NSLog(@"Warning  - cannot find AVCaptureConnection object");
     return AVCaptureVideoOrientationLandscapeRight;

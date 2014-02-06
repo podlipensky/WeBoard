@@ -1,9 +1,9 @@
 //
-//  GLESImageView.m
-//  WeBoard
+//  GLESView.m
+//  OpenCV Tutorial
 //
-//  Created by Pavlo Pidlypenskyi on 1/31/14.
-//  Copyright (c) 2014 Pavlo Pidlypenskyi. All rights reserved.
+//  Created by BloodAxe on 6/26/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "GLESImageView.h"
@@ -13,19 +13,26 @@
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
 
+#import "FPSCalculator.h"
+
 @interface GLESImageView()
 {
     // The OpenGL ES names for the framebuffer and renderbuffer used to render to this view.
     GLuint defaultFramebuffer, colorRenderbuffer;
     GLuint backgroundTextureId;
     GLint framebufferWidth, framebufferHeight;
+    
 }
 @property (nonatomic, retain) EAGLContext *context;
+@property (nonatomic, strong) FPSCalculator * fpsCalculator;
+@property (nonatomic, strong) UILabel *fpsLabel;
 
 @end
 
 @implementation GLESImageView
+@synthesize fpsLabel;
 @synthesize context;
+@synthesize fpsCalculator;
 
 // You must implement this method
 + (Class)layerClass
@@ -46,27 +53,20 @@
                                         kEAGLColorFormatRGBA8, kEAGLDrawablePropertyColorFormat,
                                         nil];
         
-        [self initContext];
-    }
-    return self;
-}
-
-- (id)initWithCoder:(NSCoder*)coder
-{
-    self = [super initWithCoder:coder];
-	if (self)
-    {
-        CAEAGLLayer *eaglLayer = (CAEAGLLayer *)self.layer;
+        self.fpsCalculator = [[FPSCalculator alloc] init];
         
-        eaglLayer.opaque = TRUE;
-        eaglLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
-                                        [NSNumber numberWithBool:FALSE], kEAGLDrawablePropertyRetainedBacking,
-                                        kEAGLColorFormatRGBA8, kEAGLDrawablePropertyColorFormat,
-                                        nil];
+        self.fpsLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 100, 100)];
+        self.fpsLabel.text = @"XXX FPS";
+        self.fpsLabel.textColor = [UIColor greenColor];
+        self.fpsLabel.backgroundColor = [UIColor clearColor];
+        self.fpsLabel.numberOfLines = 1;
+        
+        [self.fpsLabel sizeToFit];
+        
+        [self addSubview:self.fpsLabel];
         
         [self initContext];
     }
-    
     return self;
 }
 
@@ -93,7 +93,8 @@
 
 - (void)createFramebuffer
 {
-    if (context && !defaultFramebuffer) {
+    if (context && !defaultFramebuffer)
+    {
         [EAGLContext setCurrentContext:context];
         
         // Create default framebuffer object.
@@ -113,7 +114,7 @@
             NSLog(@"Failed to make complete framebuffer object %x", glCheckFramebufferStatus(GL_FRAMEBUFFER));
         
         //glClearColor(0, 0, 0, 0);
-        NSLog(@"Framebuffer created");
+        NSLog(@"Framebuffer created %d x %d", framebufferWidth, framebufferHeight);
     }
 }
 
@@ -171,6 +172,8 @@
 
 - (void)layoutSubviews
 {
+    [super layoutSubviews];
+    
     // The framebuffer will be re-created at the beginning of the next setFramebuffer method call.
     [self deleteFramebuffer];
 }
@@ -197,55 +200,87 @@
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 }
 
+- (UIViewController *)viewController {
+    UIResponder *responder = self;
+    while (![responder isKindOfClass:[UIViewController class]]) {
+        responder = [responder nextResponder];
+        if (nil == responder) {
+            break;
+        }
+    }
+    return (UIViewController *)responder;
+}
 
 - (void)drawFrame:(const cv::Mat&) bgraFrame
 {
     [self setFramebuffer];
+    [self.fpsCalculator putTimeMark];
+    
+    self.fpsLabel.text = [self.fpsCalculator getFPSAsText];
     
     glPixelStorei(GL_PACK_ALIGNMENT, 1);
+    //glPixelStorei(GL_PACK_ROW_LENGTH, (size_t)bgraFrame.step);
     glBindTexture(GL_TEXTURE_2D, backgroundTextureId);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, bgraFrame.cols, bgraFrame.rows, 0, GL_BGRA, GL_UNSIGNED_BYTE, bgraFrame.data);
     
-    GLfloat w = self.bounds.size.width;
-    GLfloat h = self.bounds.size.height;
+    UIInterfaceOrientation uiOrientation = [[self viewController] interfaceOrientation];
+    
+    GLfloat * textureVertices;
+    static GLfloat textureVerticesPortrait[] =
+    {
+        1, 1,   1, 0,
+        0, 1,   0, 0
+    };
+    
+    static GLfloat textureVerticesPortraitUpsideDown[] =
+    {
+        0, 0,   0, 1,
+        1, 0,   1, 1
+    };
+    
+    static GLfloat textureVerticesLandscapeLeft[] =
+    {
+        1, 0,   0, 0,
+        1, 1,   0, 1
+    };
+    
+    static GLfloat textureVerticesLandscapeRight[] =
+    {
+        0, 1,   1, 1,
+        0, 0,   1, 0
+    };
+    
+    switch (uiOrientation)
+    {
+        case UIInterfaceOrientationPortrait:
+            textureVertices = textureVerticesPortrait;
+            break;
+            
+        case UIInterfaceOrientationPortraitUpsideDown:
+            textureVertices = textureVerticesPortraitUpsideDown;
+            break;
+            
+        case UIInterfaceOrientationLandscapeLeft:
+            textureVertices = textureVerticesLandscapeLeft;
+            break;
+            
+        case UIInterfaceOrientationLandscapeRight:
+        default:
+            textureVertices = textureVerticesLandscapeRight;
+            break;
+    };
     
     static const GLfloat squareVertices[] =
     {
-        0, 0,
-        w, 0,
-        0, h,
-        w, h
+        -1, -1,
+        +1, -1,
+        -1, +1,
+        +1, +1
     };
     
-    /*
-     // For back-facing camera
-     static const GLfloat textureVertices[] =
-     {
-     1, 0,
-     1, 1,
-     0, 0,
-     0, 1
-     };/**/
-    
-    // For front-facing camera
-    static const GLfloat textureVertices[] =
-    {
-        1, 1,
-        1, 0,
-        0, 1,
-        0, 0
-    };
     
     glMatrixMode(GL_PROJECTION);
-    
-    static const GLfloat proj[] =
-    {
-        0, -2.f/w, 0, 0,
-        -2.f/h, 0, 0, 0,
-        0, 0, 1, 0,
-        1, 1, 0, 1
-    };
-    glLoadMatrixf(proj);
+    glLoadIdentity();
     
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();

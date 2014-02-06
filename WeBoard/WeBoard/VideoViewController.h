@@ -1,28 +1,21 @@
 //
 //  VideoViewController.h
-//  OpenCV Tutorial
+//  WeBoard
 //
-//  Created by BloodAxe on 6/26/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Pavlo Pidlypenskyi on 2/1/14.
+//  Copyright (c) 2014 Pavlo Pidlypenskyi. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "GLESImageView.h"
 #import "VideoSource.h"
+#import "BaseVideoProcessor.h"
+#import "ProcessorFacade.h"
 
-@interface VideoViewController : BaseSampleViewController<VideoSourceDelegate,UIActionSheetDelegate>
-
-@property (weak, nonatomic) IBOutlet UIView *containerView;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *options;
+@interface VideoViewController : UIViewController <VideoSourceDelegate>
+@property (strong, nonatomic) IBOutlet UIView *containerView;
 
 @property (nonatomic, strong) GLESImageView *imageView;
-- (IBAction)captureReferenceFrame:(id)sender;
-- (IBAction)clearReferenceFrame:(id)sender;
-
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *captureReferenceFrameButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *clearReferenceFrameButton;
-
-- (IBAction)showActionSheet:(id)sender;
-
+@property ProcessorFacade *currentProcessor;
 @end
-
